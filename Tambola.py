@@ -1,17 +1,17 @@
 import pyttsx3 #lib to convert text->speech
-import random
-import time
-arr=[]
-print("### Lets play tambola ###")
+import random #lib to generate random numbers
+import time #lib to give time pause bw consecutive no
+arr=[]  
+print("### Lets play Tambola ###")
 print("\nEnter yes to play :- ")
 n =input()
 if(n=="yes" or n=="Yes"):
     for i in range(90):
         while(1):
-            n=random.randint(1,90)
+            n=random.randint(1,90)#to generate random no.
             if n not in arr:
                 print(n,end=" ")
-                speaker=pyttsx3.init()
+                speaker=pyttsx3.init()#text to speech
                 speaker.say(n)
                 speaker.runAndWait()
                 arr.append(n)
@@ -19,6 +19,10 @@ if(n=="yes" or n=="Yes"):
                 break
 else : 
     speaker=pyttsx3.init()
-    speaker.say("sorry! We'll play someother time")
+    speaker.say("Sorry! We'll play someother time")
     speaker.runAndWait()
+speaker=pyttsx3.init()
+speaker.say("Thank you! for playing")
+speaker.runAndWait()
+print("### Game End ###")
 
